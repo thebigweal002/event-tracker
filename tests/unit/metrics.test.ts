@@ -25,6 +25,7 @@ describe("metricsUtil", () => {
   it("should build correct prometheus format", async () => {
     const mockedRedis = redisClient as jest.Mocked<typeof redisClient>;
     mockedRedis.xlen.mockResolvedValue(100);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     mockedRedis.get.mockImplementation(async (key: any) => {
       if (key === "worker:heartbeat") return new Date().toISOString();
       if (key === "worker:last_processed_at") return new Date().toISOString();

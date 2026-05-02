@@ -20,7 +20,9 @@ export default async () => {
                 dbReady = true;
                 break;
             }
-        } catch (e) {}
+        } catch {
+            // Service might not be started yet
+        }
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
 

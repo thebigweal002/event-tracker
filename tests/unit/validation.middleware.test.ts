@@ -10,7 +10,7 @@ describe("validationMiddleware", () => {
 
   let mockReq: Partial<Request>;
   let mockRes: Partial<Response>;
-  let nextFunction: NextFunction = jest.fn();
+  const nextFunction: NextFunction = jest.fn();
 
   beforeEach(() => {
     mockReq = {};

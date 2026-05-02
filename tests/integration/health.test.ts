@@ -1,6 +1,6 @@
 import supertest from "supertest";
 import { createApp } from "../../src/app";
-import { pool, redisClient, connectAll } from "../../src/db/connection";
+import { redisClient, connectAll } from "../../src/db/connection";
 
 const { app } = createApp();
 const request = supertest(app);

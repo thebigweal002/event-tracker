@@ -1,4 +1,3 @@
-import { Request, Response, NextFunction } from "express";
 import { writeLimiter, globalLimiter } from "../../src/middleware/rateLimiter.middleware";
 
 describe("Rate Limiter Middleware Configuration", () => {

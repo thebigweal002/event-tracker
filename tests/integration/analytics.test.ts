@@ -26,7 +26,7 @@ describe("GET /analytics", () => {
     expect(response.body.success).toBe(true);
     expect(response.body.range).toBe("1h");
     // Should have 2 click entries (10m and 5m ago)
-    const clicks = response.body.data.filter((r: any) => r.event_name === 'click');
+    const clicks = response.body.data.filter((r: { event_name: string }) => r.event_name === 'click');
     expect(clicks.length).toBeGreaterThanOrEqual(1); // 1h bucket might group them depending on time_bucket param but query uses 1 min bucket
   });
 
@@ -35,7 +35,7 @@ describe("GET /analytics", () => {
     
     expect(response.status).toBe(200);
     expect(response.body.range).toBe("24h");
-    const clicks = response.body.data.filter((r: any) => r.event_name === 'click');
+    const clicks = response.body.data.filter((r: { event_name: string }) => r.event_name === 'click');
     expect(clicks.length).toBeGreaterThanOrEqual(2); // Should include the 2h ago entry
   });
 });
