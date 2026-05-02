@@ -2,6 +2,8 @@
 
 This project uses a multi-layered testing strategy (Unit, Integration, and End-to-End) powered by **Jest** and **Docker**.
 
+> **Related docs:** [ARCHITECTURE.md](./ARCHITECTURE.md) · [MODULES.md](./MODULES.md) · [CONFIGURATION.md](./CONFIGURATION.md) · [OBSERVABILITY.md](./OBSERVABILITY.md)
+
 ---
 
 ## 🚀 Quick Start

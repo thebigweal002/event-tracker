@@ -1,9 +1,3 @@
-> [!IMPORTANT]
-> **🚀 Project has moved**
-> Development is continuing on a new repository to maintain active CI/CD and deployments.
-> **Latest Version:** [thebigweal002/event-tracker](https://github.com/thebigweal002/event-tracker.git)
-
----
 
 # High-Throughput Real-Time Analytics Pipeline
 
