@@ -1,6 +1,6 @@
 # High-Throughput Real-Time Analytics Pipeline
 
-A production-grade data ingestion and processing pipeline built with Node.js, TypeScript, Redis Streams, and TimescaleDB. This project demonstrates how to build a scalable, event-driven system capable of ingesting thousands of events per second, processing them in real-time, and visualizing them on a live-updating dashboard.
+A production-grade data ingestion and processing pipeline built with Node.js, TypeScript, Redis Streams, and TimescaleDB. This project demonstrates how to build a scalable, event-driven system capable of high-throughput ingestion that handles traffic spikes without dropping events, processing them in real-time, and visualizing them on a live-updating dashboard.
 
 ![Project Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-blue)
@@ -241,6 +241,6 @@ Two GitHub Actions workflows run on push and pull request to `main`:
 
 ## 🗺️ Future Improvements
 
-- **Consumer Groups:** Allow multiple worker instances to cooperatively share the Redis Stream using `XREADGROUP`, enabling horizontal scaling.
-- **Second Consumer:** Add an independent worker (e.g., a "Fraud Detection Worker") that reads the same stream without affecting the analytics worker's bookmark.
-- **Scale to Kafka:** For planet-scale deployments, the Redis Stream could be replaced with Apache Kafka.
+- **Consumer Groups:** Transition from manual bookmarks to `XREADGROUP`. This is the most natural next step for horizontal scaling, allowing multiple worker instances to cooperatively share the stream. Because Redis tracks the offset within the group, you can scale workers up or down without affecting the "bookmark" logic or risking double-processing.
+- **Independent Consumers:** Add a second consumer group for unrelated tasks (e.g., a "Fraud Detection Worker"). This allows multiple independent systems to process the same event stream at their own pace without interfering with each other's progress.
+- **Scale to Kafka:** For planet-scale requirements involving multi-region replication or massive data retention, the Redis Stream layer can be swapped for Apache Kafka while maintaining the same architectural patterns.
