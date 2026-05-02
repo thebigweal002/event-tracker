@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> **🚀 Project has moved**
+> Development is continuing on a new repository to maintain active CI/CD and deployments.
+> **Latest Version:** [thebigweal002/event-tracker](https://github.com/thebigweal002/event-tracker.git)
+
+---
+
 # High-Throughput Real-Time Analytics Pipeline
 
 A production-grade data ingestion and processing pipeline built with Node.js, TypeScript, Redis Streams, and TimescaleDB. This project demonstrates how to build a scalable, event-driven system capable of high-throughput ingestion that handles traffic spikes without dropping events, processing them in real-time, and visualizing them on a live-updating dashboard.
@@ -127,7 +134,7 @@ flowchart TD
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/TheBigWealth89/event-tracker.git
+    git clone https://github.com/thebigweal002/event-tracker.git
     cd event-tracker
     ```
 
